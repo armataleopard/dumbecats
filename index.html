@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dumbecat ($dumbcats)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Bungee&family=Fredoka+One&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-cats">
+            <!-- Floating cat images will be added via JS -->
+        </div>
+        <h1 class="title">dumbecat</h1>
+        <p class="subtitle">LAUNCHING AT PUMP.FUN</p>
+        <a href="https://twitter.com/dumbecats" class="twitter-button" target="_blank">
+            <span class="paw-icon">🐾</span>
+            <span class="twitter-text">TWITTER</span>
+        </a>
+    </section>
+
+    <!-- Cat Stories Section -->
+    <section class="cat-stories">
+        <h2>MEET THE DUMBECATS</h2>
+        <div class="stories-container">
+            <div class="story-card" data-cat="chaircat">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="1.png" alt="Chaircat">
+                        <h3>Chaircat</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>In 2014, he crawled into a plastic chair... and never left. The chair became his ecosystem. They say if you whisper correctly into the backrest, you can hear trading advice. But only if you've already forgotten everything.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-card" data-cat="wallbert">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="2.png" alt="Wallbert">
+                        <h3>Wallbert</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>He was just walking. Now he's in the wall. Nobody saw how he got there. Nobody heard his scream. But the $dumbcats chart stopped moving that day. Coincidence?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-card" data-cat="boxito">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="3.png" alt="Boxito">
+                        <h3>Boxito</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Cardboard box. Dream. Reality. After 7 years, he's still there. He didn't lose his mind — he lost interest in the market.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-card" data-cat="microwave">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="4.png" alt="Microwave Max">
+                        <h3>Microwave Max</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>They say Max became one with the microwave. He doesn't heat up — he glows. Inside him, you can see a reflection of your portfolio. Always sideways.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-card" data-cat="ceiling">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="5.png" alt="Ceiling Meow">
+                        <h3>Ceiling Meow</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>He's been hanging on the ceiling since 2021. Doesn't fall. Doesn't grow. Just exists. Every time you look up — you're one step closer to enlightenment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Stuck Section -->
+    <section class="get-stuck">
+        <div class="rotating-cat">
+            <img src="6.png" alt="Rotating cat">
+        </div>
+        <button class="stuck-button" id="stuckButton">GET STUCK</button>
+        <div class="popup" id="stuckPopup">
+            <div class="popup-content">
+                <img src="logo.jpg" alt="Stuck cat">
+                <h3>you are one of us now</h3>
+                <button class="close-popup">CLOSE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="https://twitter.com/dumbecats" class="footer-twitter" target="_blank">
+                <span class="paw-icon">🐾</span>
+                <span>TWITTER</span>
+            </a>
+            <p class="slogan">no utility. no roadmap. only stuck.</p>
+        </div>
+        <div class="floating-heads">
+            <!-- Small floating cat heads will be added via JS -->
+        </div>
+    </footer>
+
+    <!-- Audio Toggle -->
+    <button class="sound-toggle" id="soundToggle">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off">🔇</span>
+    </button>
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-kitty-meow-92.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="meowSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-domestic-cat-hungry-meow-45.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html> 

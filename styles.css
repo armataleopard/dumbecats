@@ -1,0 +1,554 @@
+/* Global Styles */
+:root {
+    --pink: #ff80bf;
+    --mint: #80ffea;
+    --yellow: #ffff80;
+    --purple: #9580ff;
+    --blue: #80b3ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(-45deg, var(--pink), var(--purple), var(--mint), var(--blue));
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff80bf" d="M50,15c-19.33,0-35,15.67-35,35s15.67,35,35,35s35-15.67,35-35S69.33,15,50,15z M70,55 c-2.76,0-5-2.24-5-5s2.24-5,5-5s5,2.24,5,5S72.76,55,70,55z M55,40c0-2.76,2.24-5,5-5s5,2.24,5,5s-2.24,5-5,5S55,42.76,55,40z M30,55c-2.76,0-5-2.24-5-5s2.24-5,5-5s5,2.24,5,5S32.76,55,30,55z M45,40c0-2.76,2.24-5,5-5s5,2.24,5,5s-2.24,5-5,5 S45,42.76,45,40z M50,75c-8.28,0-15-6.72-15-15h30C65,68.28,58.28,75,50,75z"/></svg>');
+    background-size: contain;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+}
+
+.cursor.click {
+    transform: scale(1.2) !important;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.title {
+    font-family: 'Bungee', cursive;
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 0 10px var(--pink), 0 0 20px var(--mint);
+    animation: pulse 3s infinite;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px var(--pink), 0 0 20px var(--mint);
+    }
+    50% {
+        transform: scale(1.03);
+        text-shadow: 0 0 15px var(--pink), 0 0 25px var(--mint);
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px var(--pink), 0 0 20px var(--mint);
+    }
+}
+
+.subtitle {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--mint);
+    z-index: 2;
+}
+
+.twitter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--purple);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    z-index: 2;
+    will-change: transform;
+}
+
+.twitter-button:hover {
+    transform: scale(1.1);
+    background-color: var(--mint);
+    color: white;
+    box-shadow: 0 0 15px var(--mint);
+    border-color: white;
+}
+
+.twitter-button:hover .paw-icon {
+    animation: shake 0.5s ease infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.paw-icon {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.floating-cats {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating-cat {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: float 30s linear infinite;
+    opacity: 0.7;
+    will-change: transform;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100px) translateX(calc(100vw - 100px)) rotate(360deg);
+    }
+}
+
+/* Cat Stories Section */
+.cat-stories {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cat-stories h2 {
+    font-family: 'Bungee', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 0 0 10px var(--mint);
+}
+
+.stories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    will-change: transform;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.story-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-front {
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-front h3 {
+    padding: 15px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
+.card-back {
+    background: linear-gradient(135deg, var(--mint), var(--blue));
+    transform: rotateY(180deg);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Get Stuck Section */
+.get-stuck {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 60vh;
+}
+
+.rotating-cat {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+    animation: rotate3D 15s linear infinite;
+    will-change: transform;
+}
+
+.rotating-cat img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+.stuck-button {
+    background-color: var(--yellow);
+    color: var(--purple);
+    font-family: 'Bungee', cursive;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 128, 0.5);
+}
+
+.stuck-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 128, 0.7);
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, var(--pink), var(--mint));
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 80%;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.popup.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-content img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.popup-content h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.close-popup {
+    background-color: white;
+    color: var(--purple);
+    font-family: 'Bungee', cursive;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-popup:hover {
+    background-color: var(--purple);
+    color: white;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-twitter {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: var(--purple);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-twitter:hover {
+    transform: scale(1.1);
+    background-color: var(--mint);
+    color: white;
+}
+
+.slogan {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.floating-heads {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.floating-head {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    animation: floatHead 20s linear infinite;
+    will-change: transform;
+}
+
+@keyframes floatHead {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Sound Toggle */
+.sound-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sound-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sound-on, .sound-off {
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.sound-on {
+    opacity: 0;
+}
+
+.sound-off {
+    opacity: 1;
+}
+
+.sound-active .sound-on {
+    opacity: 1;
+}
+
+.sound-active .sound-off {
+    opacity: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .stories-container {
+        gap: 1rem;
+    }
+    
+    .story-card {
+        width: 300px;
+    }
+    
+    .rotating-cat {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .twitter-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .cat-stories h2 {
+        font-size: 2rem;
+    }
+    
+    .story-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .stuck-button {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+    
+    .popup-content img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .popup-content h3 {
+        font-size: 1.5rem;
+    }
+} 
